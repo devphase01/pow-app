@@ -1,0 +1,17 @@
+@use '../../scss/index' as *;
+
+.app__breeds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+  gap: 20px;
+}
+
+
+.app__breed-block {
+  background: blueviolet;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 20px;
+}
