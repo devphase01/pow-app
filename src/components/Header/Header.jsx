@@ -3,7 +3,6 @@ import './Header.scss';
 import { BsEmojiSmile, BsEmojiFrown } from 'react-icons/bs';
 import { AiOutlineHeart, AiOutlineSearch } from 'react-icons/ai';
 
-
 const Header = () => {
   return (
     <div className="app__header">

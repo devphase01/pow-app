@@ -5,7 +5,6 @@
 .app__voting {
   width: 100%;
 
-  margin-top: 1rem;
   padding: 1rem;
 
   background: #ffffff;
@@ -89,6 +88,13 @@
 
   transition: all 300ms ease;
 
+  .action-icon {
+    width: 30px;
+    height: 30px;
+
+    color: #FFFFFF;
+  }
+
   &.like {
     background: #97eab9;
     border-radius: 20px 0 0 20px;
@@ -133,4 +139,21 @@
   border-radius: 5px;
 
   padding: 5px 10px;
+}
+
+.message-icon {
+  width: 25px;
+  height: 25px;
+
+  &.like {
+    color: #97EAB9;
+  }
+
+  &.dislike {
+    color: #FFD280;
+  }
+
+  &.fav {
+    color: #FF868E;
+  }
 }

@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Layout } from './components';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById('root') 
 );
 
 root.render(
