@@ -1,0 +1,44 @@
+@mixin flex($justify-content, $align-items, $flex-direction) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+}
+
+@mixin backArrow() {
+  min-width: 40px;
+  min-height: 40px;
+
+  background: #fbe0dc;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin sectionTitle() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 15px;
+
+  color: #ffffff;
+
+  background: #ff868e;
+  border-radius: 10px;
+
+  height: 40px;
+
+  font-weight: 500;
+  font-size: 20px;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}

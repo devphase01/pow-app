@@ -3,3 +3,17 @@
 .app__wrapper {
   width: 680px;
 }
+
+.app__gallery {
+  width: 100%;
+  height: 700px;
+
+  padding: 1rem;
+
+  background: #ffffff;
+  border-radius: 10px;
+
+  position: relative;
+
+  overflow-y: auto;
+}

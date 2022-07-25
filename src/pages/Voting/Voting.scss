@@ -1,3 +1,5 @@
+@use '../../scss/index.scss' as *;
+
 .app__wrapper {
   width: 680px;
 }
@@ -21,41 +23,11 @@
 }
 
 .app__voting-navigate-arrow {
-  width: 40px;
-  height: 40px;
-
-  background: #fbe0dc;
-  border-radius: 10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:hover {
-    cursor: pointer;
-  }
+  @include backArrow();
 }
 
 .app__voting-navigate-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 0 15px;
-
-  color: #ffffff;
-
-  background: #ff868e;
-  border-radius: 10px;
-
-  height: 40px;
-
-  font-weight: 500;
-  font-size: 20px;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
+  @include sectionTitle();
 }
 
 .app__voting-image-box {
