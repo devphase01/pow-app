@@ -1,7 +1,7 @@
-<h1>Home4Pow</h1>
+<h1>Pow gallery</h1>
 
 
-<h1>Description</h1>
+<h1>Instruction</h1>
 <ul>
   <li>Clone this repository</li>
   <li>Move to pow-app folder
