@@ -1,0 +1,76 @@
+.app__select {
+  width: 100%;
+
+  position: relative;
+
+  user-select: none;
+}
+
+.app__select--input {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+  padding: 0 1rem;
+
+  height: 40px;
+
+  border-radius: 10px;
+  background: #FFFFFF;
+
+  position: relative;
+
+  input {
+    width: 100%;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #1d1d1d;
+  }
+
+  label {
+    text-transform: uppercase;
+
+    font-size: 12px;
+    line-height: 18px;
+
+    color: #8c8c8c;
+
+    position: absolute;
+    top: -20px;
+    left: 10px;
+  }
+}
+
+.app__select-options {
+  width: 100%;
+  max-height: 270px;
+
+  margin-top: 1rem;
+  padding: 5px 0;
+
+  background: #FFFFFF;
+  border: 1px solid rgba(168, 168, 168, 0.18);
+
+  border-radius: 5px;
+
+  user-select: none;
+
+  overflow-y: auto;
+
+  position: absolute;
+  z-index: 3;
+
+  div {
+    width: 100%;
+    padding: 15px 10px;
+
+    cursor: default;
+
+    &:hover {
+      background: lightblue;
+    }
+  }
+}
