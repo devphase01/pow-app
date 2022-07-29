@@ -1,5 +1,5 @@
 import './Gallery.scss';
-import { GridGallery, Header, Spinner, Select } from '../../components';
+import { GridGallery, Spinner, Select } from '../../components';
 import { breedAPI } from '../../app/service/BreedService';
 import { BsChevronLeft } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
@@ -48,7 +48,6 @@ const Gallery = () => {
 
   return (
     <div className="app__wrapper">
-      <Header />
       <div className="app__gallery">
         <div className="app__gallery--bar">
           <div className="app__gallery--bar-nav">

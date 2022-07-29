@@ -5,6 +5,8 @@ import VoteTable from '../../assets/vote-table.png';
 import PetBreed from '../../assets/pet-breeds.png';
 import SearchImage from '../../assets/images-search.png';
 
+import { Header } from '../';
+
 import './Layout.scss';
 
 const Layout = ({ children }) => {
@@ -67,6 +69,7 @@ const Layout = ({ children }) => {
         </div>
       </div>
       <div className="app__layout-children">
+        <Header />
         {children}
       </div>
     </div>

@@ -1,6 +1,5 @@
 import './Voting.scss';
 
-import { Header } from '../../components';
 import { useNavigate } from 'react-router-dom';
 
 import CatImage from '../../assets/voting-cat.png';
@@ -13,8 +12,6 @@ const Voting = () => {
   const navigate = useNavigate();
   return (
     <div className="app__wrapper">
-      <Header />
-
       <div className="app__voting">
         <div className="app__voting-navigate">
           <div className="app__voting-navigate-arrow" onClick={() => navigate(-1)}>

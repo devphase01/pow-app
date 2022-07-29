@@ -1,5 +1,5 @@
 import './Breeds.scss';
-import { Header, GridLayout, Spinner, Select } from '../../components';
+import { GridLayout, Spinner, Select } from '../../components';
 import { breedAPI } from '../../app/service/BreedService';
 
 import { BsChevronLeft } from 'react-icons/bs';
@@ -41,8 +41,6 @@ const Breeds = () => {
 
   return (
     <div className="app__wrapper">
-      <Header />
-
       <div className="app__breeds">
         <div className="app__breeds__bar">
           <div className="app__breeds__bar--arrow">
