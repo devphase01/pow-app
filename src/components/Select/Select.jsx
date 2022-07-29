@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Select.scss';
 
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 const Select = ({
   options = [{ value: "", label: "" }],
-  label="",
+  label = "",
   width,
   onChange,
   defaultOption = options[0],
@@ -13,6 +13,8 @@ const Select = ({
 }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [optionValue, setOptionValue] = useState(defaultOption);
+
+  const rotateDeg = useRef(180);
 
   const handleOptionClick = (option) => {
     setShowOptions(false);
@@ -28,10 +30,17 @@ const Select = ({
         <input
           type="text"
           value={optionValue.label}
-          onChange={() => {}}
+          onChange={() => { }}
           onFocus={() => setShowOptions(true)}
         />
-        <MdOutlineKeyboardArrowDown cursor="pointer" fontSize="24px" onClick={() => setShowOptions(prev => !prev)} />
+        <MdOutlineKeyboardArrowDown
+          className="app__select--input-icon"
+          style={{ transform: `rotate(${rotateDeg.current === 0 ? 180 : 0}deg)` }}
+          onClick={() => {
+            setShowOptions(prev => !prev);
+            if(rotateDeg.current === 0) rotateDeg.current = 180;
+            else rotateDeg.current = 0;
+          } } />
       </div>
 
       {showOptions &&

@@ -1,4 +1,4 @@
-
+@use "../../scss/index" as *;
 
 .app__wrapper {
   width: 680px;
@@ -16,4 +16,117 @@
   position: relative;
 
   overflow-y: auto;
+
+  user-select: none
 }
+
+.app__gallery--bar {
+  @include flex(space-between, center, row);
+
+  margin-bottom: 1rem;
+}
+
+.app__gallery--bar-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.app__gallery__bar--arrow {
+  @include backArrow();
+}
+
+.app__gallery__bar--title {
+  @include sectionTitle();
+}
+
+.app__gallery--bar-upload {
+  @include flex(center, center, row);
+  gap: 10px;
+  padding: 0 15px;
+  
+  height: 40px;
+  
+  background: #fbe0dc;
+  border-radius: 10px;
+
+  transition: all 300ms ease;
+
+  .gallery-upload-btn {
+    color: #FF868E;
+
+    transition: color 300ms ease;
+  }
+
+  span {
+    font-family: "Jost";
+    font-size: 14px;
+    line-height: 16px;
+
+    letter-spacing: 2px;
+
+    color: #ff868e;
+
+    text-transform: uppercase;
+
+    transition: color 300ms ease;
+  }
+
+  &:hover {
+    background: #FF868E;
+
+    cursor: pointer;
+
+    span {
+      color: #FFFFFF;
+    }
+
+    .gallery-upload-btn {
+      color: #FFFFFF;
+    }
+  }
+}
+
+.app__gallery--filter-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  width: 100%;
+
+  background: #f8f8f7;
+  border-radius: 10px;
+
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+
+.filter-box--limit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-box--update {
+  color: red;
+  background: #FFFFFF;
+  border-radius: 10px;
+
+  height: 40px;
+
+  padding: 0 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  .filter-box--update-icon {
+    color: #FF868E;
+    font-size: 20px;
+
+    transition: all 300ms ease;
+  }
+}
+

@@ -3,10 +3,11 @@ import { Header, GridLayout } from '../../components';
 import { breedAPI } from '../../app/service/BreedService';
 
 import { BsChevronLeft } from 'react-icons/bs';
-import { useState } from 'react';
-import Select from 'react-select';
+import { useState, useEffect } from 'react';
 
 import { AiOutlineSortAscending, AiOutlineSortDescending } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
+import Select from '../../components/Select/Select';
 
 const Breeds = () => {
   const [limit, setLimit] = useState(10);
@@ -14,7 +15,7 @@ const Breeds = () => {
   const [currentBreed, setCurrentBreed] = useState("");
   
   const { data: breedsData, isLoading, error } = breedAPI.useFetchBreedsQuery();
-  const breeds = [{ value: "", label: "All breeds" }];
+  const [breeds, setBreeds] = useState([{ value: "", label: "All breeds" }]);
 
   const limitOption = [
     { value: 5, label: "Limit: 5" },
@@ -23,7 +24,21 @@ const Breeds = () => {
     { value: 20, label: "Limit: 20" },
   ]
 
-  if (breedsData) breedsData.forEach(breed => breeds.push({ value: breed.id, label: breed.name }))
+  useEffect(() => {
+    if(breedsData) {
+      const filtered = breedsData.map(breed => {
+        return {
+          value: breed.id,
+          label: breed.name 
+        }
+      });
+
+      filtered.unshift({ value: "", label: "All breeds" });
+      setBreeds(filtered);
+    }
+  }, [breedsData]);
+
+  const navigate = useNavigate();
 
   return (
     <div className="app__wrapper">
@@ -32,7 +47,7 @@ const Breeds = () => {
       <div className="app__breeds">
         <div className="app__breeds__bar">
           <div className="app__breeds__bar--arrow">
-            <BsChevronLeft color='#FF868E' fontSize={20} />
+            <BsChevronLeft color='#FF868E' fontSize={20} onClick={() => navigate(-1)}/>
           </div>
           <div className="app__breeds__bar--title">
             <p>Breeds</p>
@@ -40,19 +55,21 @@ const Breeds = () => {
           <div className="app__breeds__bar--breeds-filter">
             <Select
               options={!isLoading ? breeds : ""}
-              defaultValue={[breeds[0]]}
-              onChange={(e) => setCurrentBreed(e.value)}
+              defaultOption={breeds[0]}
+              onChange={setCurrentBreed}
+              background="#F8F8F7"
             />
           </div>
           <div className="app__breeds__bar--breeds-limit">
             <Select
-              defaultValue={[limitOption[1]]}
+              defaultOption={limitOption[1]}
               options={limitOption}
-              onChange={(e) => setLimit(e.value)}
+              onChange={setLimit}
               styles={{
                 borderRadius: 20,
                 outline: "none"
               }}
+              background="#F8F8F7"
             />
           </div>
           <div className="app__breeds__bar--breeds-sort">
@@ -68,8 +85,7 @@ const Breeds = () => {
           ? (
             !reverse ? <GridLayout images={breedsData.slice(0, limit)} />
             : <GridLayout images={[...breedsData].reverse().slice(0, limit)} />
-          )
-          : ""}
+          ) : ""}
         {breedsData && currentBreed.length ? <GridLayout images={breedsData.filter(breed => breed.id === currentBreed)} /> : ""}
         {error && <div>{error}</div>}
       </div>

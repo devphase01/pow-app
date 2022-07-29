@@ -1,0 +1,31 @@
+
+.app__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 20px;
+
+  user-select: none;
+}
+
+.app__gallery-grid-block {
+  width: 100%;
+  height: 100%;
+  
+  border-radius: 20px;
+  
+  overflow: hidden;
+
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
