@@ -92,4 +92,12 @@
 
     color: #ff868e;
   }
+
+  &.active {
+    background: #FF868E;
+
+    .action-icon {
+      color: #FFFFFF;
+    }
+  }
 }

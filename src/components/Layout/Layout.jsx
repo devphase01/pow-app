@@ -11,10 +11,6 @@ const Layout = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleClick = (page) => {
-    
-  }
-
   return (
     <div className="app__layout">
       <div className="app__layout__box">
