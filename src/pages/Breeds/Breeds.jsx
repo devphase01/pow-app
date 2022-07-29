@@ -1,5 +1,5 @@
 import './Breeds.scss';
-import { Header, GridLayout } from '../../components';
+import { Header, GridLayout, Spinner, Select } from '../../components';
 import { breedAPI } from '../../app/service/BreedService';
 
 import { BsChevronLeft } from 'react-icons/bs';
@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 
 import { AiOutlineSortAscending, AiOutlineSortDescending } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
-import Select from '../../components/Select/Select';
 
 const Breeds = () => {
   const [limit, setLimit] = useState(10);
@@ -80,7 +79,7 @@ const Breeds = () => {
           </div>
         </div>
 
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <div className="app__breeds-spinner"><Spinner /></div>}
         {breedsData && !currentBreed.length
           ? (
             !reverse ? <GridLayout images={breedsData.slice(0, limit)} />

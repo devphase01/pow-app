@@ -18,6 +18,13 @@
   overflow: hidden auto;
 }
 
+.app__breeds-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .app__breeds__bar {
   @include flex(space-between, center, row);
   gap: 1rem;

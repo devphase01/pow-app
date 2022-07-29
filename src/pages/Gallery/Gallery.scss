@@ -20,6 +20,13 @@
   user-select: none
 }
 
+.app__gallery-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .app__gallery--bar {
   @include flex(space-between, center, row);
 

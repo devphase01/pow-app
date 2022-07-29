@@ -1,10 +1,9 @@
 import './Gallery.scss';
-import { GridGallery, Header } from '../../components';
+import { GridGallery, Header, Spinner, Select } from '../../components';
 import { breedAPI } from '../../app/service/BreedService';
 import { BsChevronLeft } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import { BiUpload } from 'react-icons/bi';
-import Select from '../../components/Select/Select';
 import { useEffect, useRef, useState } from 'react';
 import { MdSync } from 'react-icons/md';
 
@@ -105,7 +104,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        {isLoading && <div>Loading...</div>}
+        {isLoading && <div className="app__gallery-spinner"><Spinner /></div>}
         {images && <GridGallery images={images} />}
         {error && <div>{error}</div>}
       </div>
